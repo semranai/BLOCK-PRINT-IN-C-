@@ -1,0 +1,43 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+    int main(void)
+{
+    int height;
+    do
+    {
+        height = get_int("Enter the height:\n");  //user input from 1-8 (both inclusive)
+    }
+    while (height < 1 || height > 8);
+
+    if ((height >= 1) && (height <= 8))
+    {
+        int i, j;
+        for (i = 1; i <= height; i++) // loop for the height
+        { //1st block
+            for (j = 0; j < (height - i); j++) //printing the gap for the left side
+            {
+                printf(" ");
+            }
+
+            for (j = 1; j <=i; j++) //printing for the right side
+            {
+                printf("#");
+            }
+
+            printf(" "); // printing  empty line between 1st block and the 2nd block
+
+          //2nd block
+
+            for (j = 1; j <=i ; j++) //printing the left side
+            {
+                printf("#");
+            }
+
+          printf("\n");
+        }
+        i++;
+    }
+    return 0;
+};
